@@ -1,13 +1,13 @@
 # Bistro 92 Smart Ordering System
 
-## 📋 Project Overview
+## 🛠️ Hardware Overview
 
 This project was built for the **Techathon** competition under the **MIE Robolution 2025** event.  
 We created an efficient, low-cost smart ordering system that transforms the chaotic dining experience into a smooth, modern one.
 
 ---
 
-## 🚀 Key Features
+## 🚀 Key Hardware Features
 
 - **Single Device, Multiple Tables:**  
   Instead of one device per table, we use **one device to simulate multiple tables (1–16)**.  
@@ -42,7 +42,7 @@ We created an efficient, low-cost smart ordering system that transforms the chao
 
 ---
 
-## 🛠 Hardware Used
+## 🛠️ Hardware Used
 
 - **ESP32 Microcontroller** (with Wi-Fi)
 - **OLED Display** (1.3 inch for better visibility)
@@ -50,7 +50,8 @@ We created an efficient, low-cost smart ordering system that transforms the chao
 - **Buzzer** (for button press feedback)
 
 ---
-### Big Idea Features
+
+### 💡 Big Idea Features
 
 #### 1. Augmented Reality (AR) 360° Food View
 
@@ -64,19 +65,110 @@ This allows customers to inspect the dishes from different angles, enhancing the
 
 ---
 
-- **Circuit:**  
-  ```markdown
-  ![Alt Text](./bisto92%20hardware/Circuit%20Diagram.png)
+## 📋 Software Overview
+
+## 📖 Project Overview
+
+This project is built using **Django** and **Django Rest Framework**.
+
+By default, the Django server will run on **port 8000**.
+
 ---
 
-## 🎯 Why This Solution?
+## 🛠️ Setup Instructions
+
+### 1. Install Backend Requirements
+
+- Navigate to the Backend directory:
+
+```bash
+cd Backend
+```
+
+- Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+- Activate the virtual environment:
+
+  - On Windows:
+    ```bash
+    venv\Scripts\activate
+    ```
+
+  - On macOS/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
+
+- Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 2. Install Mirror Folder Requirements
+
+- Navigate to the mirror folder:
+
+```bash
+cd mirror
+```
+
+- Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+- Activate the virtual environment:
+
+  - On Windows:
+    ```bash
+    venv\Scripts\activate
+    ```
+
+  - On macOS/Linux:
+    ```bash
+    source venv/bin/activate
+    ```
+
+- Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Running the Application
+
+- Run `middleman.py` from the mirror folder:
+
+```bash
+python middleman.py
+```
+
+- Start the Django server from the Backend directory:
+
+```bash
+python manage.py runserver
+```
+
+---
+
+## 📈 Why This Solution?
 
 - ✅ **Cost-effective**: One device can serve up to 16 tables.
 - ✅ **User-friendly**: Simple button navigation.
 - ✅ **Real-time updates**: Orders pushed instantly to the cloud.
 - ✅ **Faster service**: Reduces wait time and manual errors.
-- ✅ **Scalable and Smart**:
+- ✅ **Scalable and Smart**: Easy cloud-based operations.
 
 ---
 
-> Developed for Techathon 2025 |  By Team Alpha
+> Developed for Techathon 2025 | By **Team Alpha**
