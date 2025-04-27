@@ -50,6 +50,24 @@ We created an efficient, low-cost smart ordering system that transforms the chao
 - **Buzzer** (for button press feedback)
 
 ---
+### Big Idea Features
+
+#### 1. Augmented Reality (AR) 360° Food View
+
+We implemented an AR feature where users can view a realistic 360° model of the food item using a HIRO marker.  
+Currently, the HIRO marker (hiro_box) is used as a reference point placed on the table. In the future, the implementation will move to markerless AR directly on the dining table for a smoother experience.
+
+#### 2. Interactive 3D Food Model (Move and Zoom)
+
+Alongside AR, we also developed a 3D view system where users can freely rotate, move, and zoom into the food model.  
+This allows customers to inspect the dishes from different angles, enhancing their decision-making experience before placing an order.
+
+---
+
+- **Circuit:**  
+  ```markdown
+  ![Alt Text](./bisto92%20hardware/Circuit%20Diagram.png)
+---
 
 ## 🎯 Why This Solution?
 
