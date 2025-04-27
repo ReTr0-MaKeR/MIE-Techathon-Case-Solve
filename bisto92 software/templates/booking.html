@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Seat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "./booking.css" %}">
+</head>
+<body>
+    <div class="container main">
+        <h2>** Resturent Seat Booking Form **</h2>
+            <div class="row">
+                
+                <div class="col-6 right">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">10:00 AM - 11:00 AM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t10t11}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">11:00 AM - 12:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t11t12}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+
+
+                          <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">12:00 PM - 1:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t12t1}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">1:00 PM - 2:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t1t2}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">2:00 PM - 3:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t2t3}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">3:00 PM - 4:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t3t4}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">4:00 PM - 5:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t4t5}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">5:00 PM - 6:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t5t6}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">6:00 PM - 7:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t6t7}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">7:00 PM - 8:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t7t8}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">8:00 PM - 9:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t8t9}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        <div class="col-3 tbox">
+                            <div class="row">
+                                <p class="time_in_box">9:00 PM - 10:00 PM</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-4"><h6>{{data.t9t10}}</h6></div>
+                                <div class="col-4"></div>
+                                
+                            </div>
+                      
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-5  left">
+                    <form action='/booking' method='POST'>
+                        <h5>Book seat for {{data.date}}</h6>
+                        {% csrf_token %}
+                        <div class="form-group">
+                          
+                          <input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="text" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Full Name" required>
+                           
+                          </div>
+                          <div class="form-group">
+                            
+                            <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number" required>
+                           
+                          </div>
+                          <div class="form-group">
+                            <input type="number" name="setcount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Number Of seat" required>
+                           
+                          </div>
+                          <div class="form-group">
+                            
+                            <label for="exampleFormControlSelect1">Select Your Time</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="time">
+                              <option value = "t10t11">10:00 AM - 11:00 AM</option>
+                              <option value = "t11t12">11:00 AM - 12:00 PM</option>
+                              <option value = "t12t1">12:00 PM - 1:00 PM</option>
+                              <option value = "t1t2">1:00 PM - 2:00 PM</option>
+                              <option value = "t2t3">2:00 PM - 3:00 PM</option>
+                              <option value = "t3t4">3:00 PM - 4:00 PM</option>
+                              <option value = "t4t5">4:00 PM - 5:00 PM</option>
+                              <option value = "t5t6">5:00 PM - 6:00 PM</option>
+                              <option value = "t6t7">6:00 PM - 7:00 PM</option>
+                              <option value = "t7t8">7:00 PM - 8:00 PM</option>
+                              <option value = "t8t9">8:00 PM - 9:00 PM</option>
+                              <option value = "t9t10">9:00 PM - 10:00 PM</option>
+                            </select>
+                            <label for="exampleFormControlSelect1">Payment Method</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="p_m">
+                              <option value = "bkash">Bkash</option>
+                              <option value = "nagad">Nagad</option>
+                              <option value = "c_o_d">Cash On Delivary</option>
+                              
+                            </select>
+                           
+                          </div>
+                       <div class="space">
+                        <div class="a"></div>
+                        <button type="submit" class="btn btn-primary">Check Out</button>
+                       </div>
+                        {% for message in messages %}
+                        <p style="color:red;">{{message}}</p>
+                        {%endfor%}
+                      </form>
+                    
+                </div>
+                <div class="col-1"></div>
+
+            </div>
+            
+      
+    
+    </div>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

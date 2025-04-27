@@ -1,0 +1,104 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Show Orders ({{data.count}})  </title>
+  <link rel="stylesheet" href="{% static './transcript/style.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="heading-text">
+        {%if isorder%}
+        All Food Order List 
+        {%else%}
+        All Booking List
+        {%endif%}
+
+
+    </h1>
+    <section class="payment-transcript-area">
+      <table class="table table-striped table-hover">
+        <thead>
+          <!-- ===table header -->
+          <tr class="w-50">
+
+
+            <th scope="col" style="width:20%">Table No</th>
+            <th scope="col" style="width:20%">Items</th>
+            
+          </tr>
+          <!-- ===table header end here==== -->
+        </thead>
+        <tbody>
+          <!--=====
+            table data 
+            ======= -->
+            {%for data in data%}
+          <tr>
+            <td>{{data.order_table}}</td>
+            <td>{{data.food_list}}</td>
+     
+           
+            
+            
+            
+            
+            <td>
+              <div class="d-flex">
+                {%if isorder%}
+                {%if data.is_payment_done%}
+
+                  {%if data.is_food_ready%}
+                  <button onclick="location.href='{%if isorder%}/food_served/{{data.id}}{%else%}#{%endif%}'" class="btn accepted-btn me-1">Food Serve Done</button>
+                  {%else%}
+                  <button onclick="location.href='{%if isorder%}/food_ready/{{data.id}}{%else%}#{%endif%}'" class="btn accepted-btn">Food Ready</button>
+                  {%endif%}
+
+                {%else%}
+                <button onclick="location.href='{%if isorder%}/delete_order/{{data.id}}{%else%}#{%endif%}'" class="btn delete-btn me-1">Delete</button>
+                <button onclick="location.href='{%if isorder%}/apc_order/{{data.id}}{%else%}#{%endif%}'" class="btn accepted-btn">Accepted</button>
+              {%endif%}
+
+              {%else%}
+              <button onclick="location.href='{%if isorder%}/delete_order/{{data.id}}{%else%}#{%endif%}'" class="btn delete-btn me-1">Delete</button>
+              <button onclick="location.href='{%if isorder%}/apc_order/{{data.id}}{%else%}#{%endif%}'" class="btn accepted-btn">Accepted</button>
+              {%endif%}
+              
+              </div>
+            </td>
+           
+          </tr>
+        
+          
+          {%endfor%}
+          <!-- =====
+            table data end
+          =======  -->
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between">
+        <div>
+        </div>
+        
+      </div>
+
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+    <script>
+      setInterval(function() {
+        location.reload();
+    }, 1000);
+    </script>
+</body>
+
+</html>

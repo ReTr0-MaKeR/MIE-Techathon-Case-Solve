@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro - The smart kitchen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static "css/lightbox.min.css" %}">
+    <link rel="stylesheet" href="{%static "css/style.css"%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navbar part start -->
+    <style>
+        #login_{
+            font-family: 'Poppins', sans-serif;
+        }
+        #logout_{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    
+    <section>
+        <div class="container-fluid header ">
+            <nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between   green ">
+                <a href="" class="d-flex align-items-center col-md-3  mb-md-0 text-dark text-decoration-none">
+                    <h1 class="heading-text ms-4 ">Bistro 92</h1>
+                </a>
+    
+                <ul class="nav col-12 col-md-auto  justify-content-center mb-md-0">
+                    <li><a href="" class="nav-link px-2 link-dark nav-menu">Home</a></li>
+                    <li><a href="#about" class="nav-link px-2 link-dark nav-menu">About Us</a></li>
+                    
+    
+                   
+                    <li><a href="#contact" class="nav-link px-2 link-dark nav-menu">Contact Us</a></li>
+                    
+                    {% if user.is_authenticated %}
+                    <li><button id="logout_"  type="button" class="button2 me-4">
+                        <i class="fa-regular fa-user"></i>
+                        {% if user.first_name %}
+                       {{ user.first_name }}
+                        {%else%} 
+                        {{user.f_name}}
+                        {%endif%}
+                    </button></li>
+                    <li><button id="logout_" onclick="document.location='/show_cart'" type="button" class="button2 me-4"><i class="fa-solid fa-cart-shopping"></i> Cart</button></li>
+                    <li><button id="logout_" onclick="document.location='/logout'" type="button" class="button2 me-4"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+                    {%else%}
+                    <li><button id="login_" onclick="document.location='/login'" type="button" class="button2 me-4">Login</button></li>
+                    {%endif%}
+                    <li> 
+                        <!-- <button type="button" class="button2 me-2">Login</button> -->
+                        <button id="#table" onclick="document.location='/booking'" type="button" class="button2 me-4">Book a Table</button>
+                    </li>
+                </ul>
+    
+               
+            </nav>
+        </div>
+    </section>
+    
+    <!-- Navbar part end -->
+    <style>
+        .events{
+            width:100%;
+            
+        }
+        .card-img{
+            width:65%;
+            margin:auto;
+        }
+        .green-btn{
+            background-color:#7ff07f;
+            border: none;
+        }
+        .green-btn:hover{
+            background-color: white;
+            color:black;
+        }
+        .img-fluid{
+            height:300px
+        }
+        .img-fluid2{
+            height:150px;
+        }
+    </style>
+
+    <section id="event">
+        <div class="container mt-2">
+           
+            <div class="events">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <div class="card text-bg-dark">
+                                <img src="{% static "images/gg/Pizza.JPG" %}" class="card-img" alt="...">
+                                <div class="event-overlay d-flex align-items-center">
+                                    <div class="card-img-overlay">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="fs-2 fw-bolder">Pizza</h5>
+                                            <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid perferendis itaque. Quisquam dolorum obcaecati est architecto iste magni id!</p>
+                                            <button class="btn btn-primary green-btn" onclick="document.location='/booking'">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="card text-bg-dark">
+                                <img src="{% static "images/gg/pasta.JPG" %}" class="card-img" alt="...">
+                                <div class="event-overlay d-flex align-items-center">
+                                    <div class="card-img-overlay">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="fs-2 fw-bolder">Pasta</h5>
+                                            <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid perferendis itaque. Quisquam
+                                            dolorum obcaecati est architecto iste magni id!</p>
+                                            <button class="btn btn-primary green-btn" onclick="document.location='/booking'">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="card text-bg-dark">
+                                <img src="{% static "images/gg/Noodels.jpg" %}" class="card-img" alt="...">
+                                <div class="event-overlay d-flex align-items-center">
+                                    <div class="card-img-overlay">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="fs-2 fw-bolder">Noodels</h5>
+                                            <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid perferendis itaque. Quisquam
+                                            dolorum obcaecati est architecto iste magni id!</p>
+                                            <button class="btn btn-primary green-btn" onclick="document.location='/booking'">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="card text-bg-dark">
+                                <img src="{% static "images/gg/Fried Chiken.jpg" %}" class="card-img" alt="...">
+                                <div class="event-overlay d-flex align-items-center">
+                                    <div class="card-img-overlay">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="fs-2 fw-bolder">Fried Chiken</h5>
+                                            <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid perferendis itaque. Quisquam
+                                            dolorum obcaecati est architecto iste magni id!</p>
+                                            <button class="btn btn-primary green-btn" onclick="document.location='/booking'">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- event part end -->
+
+       
+
+
+    <!-- about part start -->
+
+   
+
+    <!-- about part start -->
+
+
+    <!-- why choose Our Restaurant part start -->
+    
+    <section>
+        <div class="container text-center mt-5">
+            <div class="section-title text-center pt-3">
+                <h2>Why choose <span>Our Restaurant</span></h2>
+                <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem ipsum et molestiae deserunt pariatur praesentium eos harum ipsa adipisci?</p>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3 my-3 shadow-lg rounded restarunt-card">
+                        <p class="h2 fw-bold font-text">01</p>
+                        <p class="h2 fw-bolder font-heading">Fresh Items</p>
+                        <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eveniet vero laboriosam nam
+                            doloremque
+                            perferendis ratione nemo sed ipsa necessitatibus!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 my-3 shadow-lg rounded restarunt-card">
+                        <p class="h2 fw-bold font-text">02</p>
+                        <p class="h2 fw-bolder font-heading">Healthy Meal</p>
+                        <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eveniet vero laboriosam nam
+                            doloremque
+                            perferendis
+                            ratione nemo sed ipsa necessitatibus!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 my-3 shadow-lg rounded restarunt-card">
+                        <p class="h2 fw-bold font-text">03</p>
+                        <p class="h2 fw-bolder font-heading">Delicious Food</p>
+                        <p class="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eveniet vero laboriosam nam
+                            doloremque
+                            perferendis
+                            ratione nemo sed ipsa necessitatibus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- why choose Our Restaurant part end -->
+
+
+    <!-- menu part start -->
+
+    <section id="menu">
+        <div class="container mt-5">
+            <div class="section-title text-center pt-3">
+                <h2>Our <span>Delicious Menu</span></h2>
+                <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem ipsum et molestiae
+                    deserunt pariatur praesentium eos harum ipsa adipisci?</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="food-category text-center my-3">
+                        <button class="button" data-filter="all">All</button>
+                        <button class="button" data-filter=".break">Beakfast</button>
+                        <button class="button" data-filter=".lunch">Lunch</button>
+                        <button class="button" data-filter=".snakes">Snakes</button>
+                        <button class="button" data-filter=".ice">Dessert</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row food my-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 mix lunch">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Fried Rice.JPG" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Fryed Rice</h5>
+                                <!-- <p class="text-decoration-line-through h6">Price: 25$</p> -->
+                                <p class="card-text h5 pb-3">Price: <span class="h3">120 TK.</span></p>
+                                <a href="/make_order/fr_ri" class="button2">Order Now</a>
+                                <a href="/add_to_cart/fr_ri" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix ice">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Fried Chiken.JPG" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Fried Chiken</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">80 TK.</span></p>
+                                <a href="/make_order/fr_ch" class="button2">Order Now</a>
+                                <a href="/add_to_cart/fr_ch" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix break snakes">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Burger.JPG" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Burger</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">70 TK</span></p>
+                                <a href="/make_order/bu" class="button2">Order Now</a>
+                                <a href="/add_to_cart/bu" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix lunch">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Noodels.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Noodels</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">100 TK</span></p>
+                                <a href="/make_order/no" class="button2">Order Now</a>
+                                <a href="/add_to_cart/no" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix lunch">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Pizza.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Pizza</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">300 TK</span></p>
+                                <a href="/make_order/pi" class="button2">Order Now</a>
+                                <a href="/add_to_cart/pi" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix ice">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/sandwich.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Sandwich</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">40 TK</span></p>
+                                <a href="/make_order/sa" class="button2">Order Now</a>
+                                <a href="/add_to_cart/sa" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix ice">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/Vegitable.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Vegitable</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">50 TK</span></p>
+                                <a href="/make_order/ve" class="button2">Order Now</a>
+                                <a href="/add_to_cart/ve" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix ice">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/pasta.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Pasta</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">50 TK</span></p>
+                                <a href="/make_order/pa" class="button2">Order Now</a>
+                                <a href="/add_to_cart/pa" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix ice">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/coffee.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Coffee</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">50 TK</span></p>
+                                <a href="/make_order/co" class="button2">Order Now</a>
+                                <a href="/add_to_cart/co" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mix break">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/pepci.png" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Pepci</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">80 TK.</span></p>
+                                <a href="/make_order/pe" class="button2">Order Now</a>
+                                <a href="/add_to_cart/pe" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix lunch">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/coca-cola.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Coca Cola</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">50 TK.</span></p>
+                                <a href="/make_order/co_co" class="button2">Order Now</a>
+                                <a href="/add_to_cart/co_co" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mix snakes">
+                    <div class="food-item">
+                        <div class="card border border-2">
+                            <div class="food-img">
+                                <img src="{% static "images/gg/mum.jpg" %}" class="img-fluid card-img-top" alt="...">
+                                <div class="img-overlay d-flex align-items-center">
+                                    <p class="text-center text-white p-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Officia obcaecati
+                                        omnis suscipit quos officiis quod.</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-3 fw-bolder">Mum Water</h5>
+                                <p class="card-text h5 pb-3">Price: <span class="h3">20 Tk.</span></p>
+                                <a href="/make_order/mu_wa" class="button2">Order Now</a>
+                                <a href="/add_to_cart/mu_wa" class="button2"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- menu part end -->
+
+
+    <!-- gallery part start -->
+    
+    <section id="gallery">
+        <div class="container mt-5">
+            <div class="section-title text-center pt-3">
+                <h2>Our <span>Gallery</span></h2>
+                <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem ipsum et molestiae
+                    deserunt pariatur praesentium eos harum ipsa adipisci?</p>
+            </div>
+            <div class="py-3 green">
+                <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                           
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-1.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-2.jpg" %}" alt="">
+                          
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-3.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                           
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-4.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                           
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-5.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-6.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                           
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-7.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-8.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-9.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-10.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-11.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            
+                                <img class="img-fluid img-fluid2" src="{% static "images/gg/img-12.jpg" %}" alt="">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- gallery part end -->
+
+
+    <!-- table booking part start -->
+   
+    
+    <!-- table booking part end -->
+
+ <!-- event part start -->
+
+ 
+
+
+
+    <!-- coontact part start -->
+    
+    <section id="contact">
+        <div class="container my-5">
+            <div class="section-title text-center pt-3">
+                <h2>Contact <span>Us</span></h2>
+                <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem ipsum et molestiae
+                    deserunt pariatur praesentium eos harum ipsa adipisci?</p>
+            </div>
+            <div class="contact-info mt-4">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 info">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>Location:</h4>
+                        <p>Ashulia, Savar, Dhaka<br>DSC, Ashulia</p>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fa-solid fa-clock"></i>
+                        <h4>Open Hours:</h4>
+                        <p>Saturday-Thrusday<br>07:30 AM - 07:30 PM</p>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>greengarden@gmail.com<br>greengardensupport@gmail.com</p>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h4>Call:</h4>
+                        <p>01301-234567<br>01316-496063</p>
+                    </div>
+                </div>
+            </div>
+    
+            <form action="/feedback" method="POST" role="form" class="contact-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mt-3 mt-md-0">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="mt-3">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="text-center mt-3"><button class="button2" type="submit">Send Message</button></div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- coontact part end -->
+    
+    <!-- footer part start -->
+    
+    <footer id="footer">
+        <div class="container">
+            <div class="section-title text-center pt-3">
+                <h3 class="footer-heading">Green Garden</h3>
+                <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem ipsum et molestiae
+                    deserunt pariatur praesentium eos harum ipsa adipisci?</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="fa-brands fa-skype"></i></a>
+                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright <strong><span>Green Garden</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    
+    <!-- footer part end -->
+
+
+
+
+    <!-- navbar part start -->
+    <!-- navbar part start -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
