@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AR Meal Preview (ModelViewer)</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { margin:0; }
+    model-viewer { width:100%; height:100vh; }
+  </style>
+</head>
+<body>
+  <model-viewer
+    id="mv"
+    src="models/Burger.glb"
+    alt="Classic Burger"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    style="cursor: pointer;">
+  </model-viewer>
+
+  <div id="menu" style="position:absolute; top:10px; left:10px; background:rgba(255,255,255,0.8); padding:8px; border-radius:6px;">
+    <select id="dishSelect">
+      <option value="models/Burger.glb">Classic Burger</option>
+      <option value="models/Fusilli pasta.glb">Fusilli Pasta</option>
+      <option value="models/Salad Bowl.glb">Salad Bowl</option>
+    </select>
+  </div>
+
+  <script>
+    const mv = document.querySelector('#mv');
+    document.querySelector('#dishSelect').addEventListener('change', e => {
+      mv.src = e.target.value;
+      mv.alt = e.target.selectedOptions[0].text;
+    });
+  </script>
+</body>
+</html>
