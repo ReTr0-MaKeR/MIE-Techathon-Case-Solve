@@ -2,7 +2,7 @@
 
 ## 📋 Project Overview
 
-This project is built for the **Techathon 2025** competition to solve the **Bistro 92** case study challenge.  
+This project was built for the **Techathon** competition under the **MIE Robolution 2025** event.  
 We created an efficient, low-cost smart ordering system that transforms the chaotic dining experience into a smooth, modern one.
 
 ---
@@ -45,8 +45,8 @@ We created an efficient, low-cost smart ordering system that transforms the chao
 ## 🛠 Hardware Used
 
 - **ESP32 Microcontroller** (with Wi-Fi)
-- **OLED/LCD Display**
-- **Push Buttons** (4 Buttons: R, S, +, -)
+- **OLED Display** (1.3 inch for better visibility)
+- **Soft Tactile Push Buttons** (4 Buttons: R, S, +, -)
 - **Buzzer** (for button press feedback)
 
 ---
@@ -54,10 +54,10 @@ We created an efficient, low-cost smart ordering system that transforms the chao
 ## 🎯 Why This Solution?
 
 - ✅ **Cost-effective**: One device can serve up to 16 tables.
-- ✅ **User-friendly**: Simple binary input and button navigation.
+- ✅ **User-friendly**: Simple button navigation.
 - ✅ **Real-time updates**: Orders pushed instantly to the cloud.
 - ✅ **Faster service**: Reduces wait time and manual errors.
-- ✅ **Scalable and Smart**: Firebase database integration for real-time order management.
+- ✅ **Scalable and Smart**:
 
 ---
 
